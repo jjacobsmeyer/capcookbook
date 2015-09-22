@@ -2,15 +2,21 @@
 <html>
 <head>
   <title>Mrs. J's Cookbook</title>
+  <link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-      <li><%= link_to "Home", welcome_index_path %></li>
-      <li><%= link_to "About", welcome_about_path %></li>
-
+  <div class="top-banner">
+   <h1 class="banner-logo"> <%= link_to "Mrs. J's Cookbook", root_path %></h1>
+   <nav>
+    <%= link_to "POULTRY", "poultry", class: "nav-link" %> |
+    <%= link_to "MEAT", "meat", class: "nav-link" %> |
+    <%= link_to "SEAFOOD", "seafood", class: "nav-link" %> |
+    <%= link_to "APPETIZERS", "appetizers", class: "nav-link" %> |
+    <%= link_to "VEGETABLES", "vegetables", class: "nav-link" %>
+  </nav>
 
         <% if current_user %>
           Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
@@ -18,7 +24,9 @@
           <%= link_to "Sign In", new_user_session_path %> or
           <%= link_to "Sign Up", new_user_registration_path %>
         <% end %>
-
-<%= yield %>
+  </div>
+<div class="white-field">
+  <%= yield %>
+</div>
 </body>
 </html>

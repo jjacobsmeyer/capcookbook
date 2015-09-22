@@ -1,2 +1,48 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+body {
+  background-image: url("woodblock.jpg");
+  margin: 0em;
+  padding-top: 5px;
+}
+
+.banner-logo {
+  font-family: "Mate SC";
+  font-size: 500%;
+  margin: 0em;
+}
+
+.white-field {
+  background-color: white;
+  width: 100%;
+  margin: 0em;
+  height: 450px;
+  padding-top: 25px;
+}
+
+nav {
+  font-family: "Courier";
+  background-color: white;
+  width: 600px;
+  padding: 1px;
+  padding-left: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  opacity: 0.7;
+}
+
+.nav-link {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+.top-banner {
+  padding: 10px;
+  background-image: url("woodblocktopbanner2.jpg");
+}
