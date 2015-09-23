@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'meat' => 'recipes#meat'
   get 'seafood' => 'recipes#seafood'
   get 'appetizers' => 'recipes#appetizers'
-  
+
   devise_for :users
 
   get 'about' => 'welcome#about'
