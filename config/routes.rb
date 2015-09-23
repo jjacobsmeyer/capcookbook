@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
-  resources :recipes
+  get 'comments/index'
+
+  get 'comments/create'
+
+  get 'comments/show'
+
+  get 'comments/edit'
+
+  get 'comments/new'
+
+  resources :recipes do
+    resources :comments, only: [:create, :show, :index, :new, :destroy]
+  end
   get 'vegetables' => 'recipes#vegetables'
   get 'poultry' => 'recipes#poultry'
   get 'meat' => 'recipes#meat'
