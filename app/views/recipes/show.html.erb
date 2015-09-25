@@ -3,3 +3,4 @@
 <h3>Comments</h3>
 <%= render partial: "comments/comment", collection: @comments %>
 <%= render partial: "comments/form", locals: { recipe: @recipe, comment: @comment } %>
+<%= render partial: "favorites/favorite", locals: { recipe: @recipe } %>

@@ -1,1 +1,7 @@
 <h1>All kinds of different meat recipes will be listed here.</h1>
+<% @recipes.each do |recipe| %>
+  <div><%= recipe.title %></div>
+  <small><%= recipe.category %></small>
+  <br>
+  <br>
+<% end %>

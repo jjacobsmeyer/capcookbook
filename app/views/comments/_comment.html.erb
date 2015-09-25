@@ -1,9 +1,9 @@
 <p><small><%= comment.body %></small></p>
-<div class="media-body">
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
   <small>
     <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
     <% if policy(comment).destroy? %>
     | <%= link_to "Delete",[@recipe, comment], method: :delete %>
     <% end %>
   </small>
-</div>
+<% end %>

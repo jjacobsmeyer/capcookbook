@@ -1,2 +1,7 @@
 <h1>Recipes#index</h1>
-<p>Here you will be able to browse all the different recipes.</p>
+<% @recipes.each do |recipe| %>
+  <div><%= recipe.title %></div>
+  <small><%= recipe.category %></small>
+  <br>
+  <br>
+<% end %>

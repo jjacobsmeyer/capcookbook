@@ -1,6 +1,10 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    if params[:category].present?
+      @recipes = Recipe.where(category: params[:category])
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def show
@@ -15,11 +19,22 @@ class RecipesController < ApplicationController
   def edit
   end
 
+  def vegetables
+  end
+
+  def meat
+  end
+
+  def seafood
+  end
+
+
+
   private
 
   def recipe_params
     params.require(:recipe).permit(:title, :body, :category)
   end
-  
+
 
 end

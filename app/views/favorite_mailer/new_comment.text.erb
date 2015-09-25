@@ -1,0 +1,8 @@
+New comment to "<%= @recipe.title %>"
+<%= "=" * (@recipe.title.length + 12) %>
+
+By: <%= @comment.user.name %>
+
+<%= @comment.body %>
+
+Visit online at: <%= recipe_url(@recipe, anchor: "comment-#{@comment.id}") %>
