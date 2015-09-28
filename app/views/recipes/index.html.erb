@@ -1,6 +1,11 @@
 <h1>Recipes#index</h1>
+
+<% if policy(Recipe.new).create? %>
+  <%= link_to "New Recipe", new_recipe_path, class: 'btn btn-success' %>
+<% end %>
+
 <% @recipes.each do |recipe| %>
-  <div><%= recipe.title %></div>
+  <div><%= link_to recipe.title, recipe %></div>
   <small><%= recipe.category %></small>
   <br>
   <br>

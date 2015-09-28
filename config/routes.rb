@@ -15,10 +15,10 @@ Rails.application.routes.draw do
     resources :favorites, only: [:create, :destroy]
   end
 
-  get 'vegetables' => 'recipes#index', :category => "vegetables"
-  get 'poultry' => 'recipes#index', :category => "poultry"
-  get 'meat' => 'recipes#index', :category => "meat"
-  get 'seafood' => 'recipes#index', :category => "seafood"
+  get 'drinks' => 'recipes#index', :category => "drinks"
+  get 'entrees' => 'recipes#index', :category => "entrees"
+  get 'sides' => 'recipes#index', :category => "sides"
+  get 'desserts' => 'recipes#index', :category => "desserts"
   get 'appetizers' => 'recipes#index', :category => "appetizers"
 
 

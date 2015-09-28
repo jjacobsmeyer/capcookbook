@@ -14,10 +14,40 @@ class RecipesController < ApplicationController
   end
 
   def new
+    @recipe = Recipe.new
   end
 
   def edit
+    @recipe = Recipe.find(params[:id])
+    authorize @recipe
   end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    authorize @recipe
+    if @recipe.update_attributes(params.require(:recipe).permit(:title, :body, :category))
+      flash[:notice] = "Recipe was updated."
+      redirect_to @recipe
+    else
+      flash[:error] = "There was an error saving the post. Please try again."
+      render :edit
+    end
+  end
+
+
+  def create
+    @recipe = Recipe.new(params.require(:recipe).permit(:title, :body, :category))
+    authorize @recipe
+    if @recipe.save
+      flash[:notice] = "Recipe was saved."
+      redirect_to @recipe
+    else
+      flash[:error] = "There was an error saving the post. Please try again."
+      render :new
+    end
+  end
+
+
 
   def vegetables
   end
