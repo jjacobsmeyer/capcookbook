@@ -25,7 +25,7 @@ class RecipesController < ApplicationController
   def update
     @recipe = Recipe.find(params[:id])
     authorize @recipe
-    if @recipe.update_attributes(params.require(:recipe).permit(:title, :body, :category))
+    if @recipe.update_attributes(recipe_params)
       flash[:notice] = "Recipe was updated."
       redirect_to @recipe
     else
@@ -36,7 +36,7 @@ class RecipesController < ApplicationController
 
 
   def create
-    @recipe = Recipe.new(params.require(:recipe).permit(:title, :body, :category))
+    @recipe = Recipe.new(recipe_params)
     authorize @recipe
     if @recipe.save
       flash[:notice] = "Recipe was saved."
@@ -63,7 +63,7 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :body, :category)
+    params.require(:recipe).permit(:title, :body, :category, :ingredient)
   end
 
 

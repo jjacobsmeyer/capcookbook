@@ -1,4 +1,7 @@
 <h1><%= @recipe.title %></h1>
+<h4>Ingredients</h4>
+<p><%= @recipe.ingredient %></p>
+<h4>Directions</h4>
 <p><%= @recipe.body %></p>
 <% if policy(@recipe).edit? %>
   <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success' %>
