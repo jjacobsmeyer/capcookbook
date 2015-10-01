@@ -1,3 +1,22 @@
 // Place all the styles related to the Comments controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.commentbody {
+  margin-top: -20px;
+  padding-left: 14px;
+  font-family: "Courier";
+  font-size: 85%;
+}
+
+.commentago {
+  padding-left: 14px;
+  font-family: arial;
+  font-size: 80%;
+}
+
+.createcomment {
+  padding-left: 14px;
+  font-family: arial;
+  font-size: 75%;
+}

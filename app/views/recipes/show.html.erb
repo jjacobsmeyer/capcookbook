@@ -1,13 +1,28 @@
-<h1><%= @recipe.title %></h1>
-<h4>Ingredients</h4>
-<p><%= @recipe.ingredient %></p>
-<h4>Directions</h4>
-<p><%= @recipe.body %></p>
+<header>
+  <h1 class="recipetitle"><%= @recipe.title %></h1>
+    <link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
+</header>
+
+<section class="grid">
+  <section class="col-1-2">
+    <h4 class="ingredtitle">Ingredients</h4>
+    <link href="http://allfont.net/allfont.css?fonts=linotypezapfino-one" rel="stylesheet" type="text/css" />
+    <p class="ingredlist"><%= @recipe.ingredient %></p>
+  </section>
+  <section class="col-1-2">
+    <h4 class="directitle">Directions</h4>
+    <p class="direclist"><%= @recipe.body %></p>
+  </section>
+</section>
+
+<div class="editfavorites">
 <% if policy(@recipe).edit? %>
   <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success' %>
 <% end %>
 <%= render partial: "favorites/favorite", locals: { recipe: @recipe } %>
-<h3>Comments</h3>
+</div>
+
+<h3 class="commenttitle">Comments<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'></h3>
 <%= render partial: "comments/comment", collection: @comments %>
 <% if policy(Comment.new).create? %>
   <%= render partial: "comments/form", locals: { recipe: @recipe, comment: @comment } %>
