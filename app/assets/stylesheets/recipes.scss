@@ -1,51 +1,48 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-code {
-  display: block;
-  padding: 5px 15px;
+.container {
+  width: 100%;
 }
 
-.grid {
-  margin: 0 auto;
-  width: 960px;
+h4 {
+  margin: 0em;
 }
 
-.grid,
-.col-1-2 {
-  margin: 0px;
-  padding-left: 15px;
-  padding-right: 15px;
+.clearfix {
+  clear: both;
 }
 
-.col-1-2 {
-  display: inline-block;
-  vertical-align: top;
+.primary-body {
+  // -webkit-column-count: 2; /* Chrome, Safari, Opera */
+  // -moz-column-count: 2; /* Firefox */
+  // column-count: 2;
+  // -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
+  // -moz-column-rule-style: solid; /* Firefox */
+  // column-rule-style: solid;
+  // -webkit-column-width: 50%; /* Chrome, Safari, Opera */
+  // column-width: 50%;
+  // -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
+  // -moz-column-rule-width: 1px; /* Firefox */
+  // column-rule-width: 1px;
+  // -webkit-column-rule-color: gray; /* Chrome, Safari, Opera */
+  // -moz-column-rule-color: gray; /* Firefox */
+  // column-rule-color: gray;
 }
 
-.col-1-2 {
-  width: 33.33%;
-}
-
-.grid,
-.col-1-2
-section {
-  margin: 20 50% 24px 1.5%;
-}
-
-header {
-  margin-top: 0px;
-  padding-top: 0px;
-  padding-bottom: 0px;
+.primary, .secondary, .col-1, .col-2 {
+  width: 50%;
+  float: left;
 }
 
 .recipetitle {
+  margin: 0px;
   font-family: "Mate SC";
   font-size: 300%;
 }
 
 .ingredtitle {
+  margin: 0px;
   font-family: "LinotypeZapfino One";
   font-size: 280%;
   color: #996633;
@@ -78,6 +75,10 @@ header {
   padding-left: 14px;
   font-family: arial;
   font-size: 80%;
+}
+
+.function-links {
+  font-family: "Courier";
 }
 
 section {

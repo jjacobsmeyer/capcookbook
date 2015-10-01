@@ -1,20 +1,49 @@
-<header>
-  <h1 class="recipetitle"><%= @recipe.title %></h1>
+
+<div class="container">
+
+  <div class="primary">
+    <h1 class="recipetitle"><%= @recipe.title %></h1>
     <link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
-</header>
 
-<section class="grid">
-  <section class="col-1-2">
-    <h4 class="ingredtitle">Ingredients</h4>
-    <link href="http://allfont.net/allfont.css?fonts=linotypezapfino-one" rel="stylesheet" type="text/css" />
-    <p class="ingredlist"><%= @recipe.ingredient %></p>
-  </section>
-  <section class="col-1-2">
-    <h4 class="directitle">Directions</h4>
-    <p class="direclist"><%= @recipe.body %></p>
-  </section>
-</section>
+    <div class="primary-body">
+      <div class="col-1">
+        <h4 class="ingredtitle">Ingredients</h4>
+        <link href="http://allfont.net/allfont.css?fonts=linotypezapfino-one" rel="stylesheet" type="text/css" />
+        <div class="ingredlist">
+          <ul>
+            <% @recipe.ingredient.each_line do |line| %>
+              <li><%= line %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
 
+      <div clas="col-2">
+        <h4 class="directitle">Directions</h4>
+        <div class="direclist">
+          <ol>
+            <% @recipe.body.each_line do |line| %>
+              <li><%= line %></li>
+            <% end %>
+          </ol>
+        </div>
+      </div>
+    </div>  
+
+    <div class="clearfix"></div>
+
+    <p>View Mrs. J's recipe Card: <img src="http://placehold.it/70x50" alt="card"> <img src="http://placehold.it/70x50" alt="card"></p>
+  </div>
+
+  <div class="secondary">
+    <p>
+      <span class="function-links"><a href="#">Download Recipe</a> | <a href="#">Add to Grocery List</a></span>
+    </p>
+    <img src="http://placehold.it/500x350" alt="Image of Dish" />
+  </div>
+</div>
+
+<div class="clearfix"></div>
 <div class="editfavorites">
 <% if policy(@recipe).edit? %>
   <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success' %>
