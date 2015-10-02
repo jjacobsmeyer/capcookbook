@@ -1,0 +1,162 @@
+/* line 4, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.container {
+  width: 100%;
+}
+
+/* line 8, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+h4 {
+  margin: 0em;
+}
+
+/* line 12, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.clearfix {
+  clear: both;
+}
+
+/* line 33, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.primary, .secondary, .col-1, .col-2 {
+  width: 50%;
+  float: left;
+}
+
+/* line 38, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.recipetitle {
+  margin: 0px;
+  font-family: "Mate SC";
+  font-size: 300%;
+}
+
+/* line 44, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.ingredtitle {
+  margin: 0px;
+  font-family: "LinotypeZapfino One";
+  font-size: 280%;
+  color: #996633;
+}
+
+/* line 51, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.directitle {
+  font-family: "LinotypeZapfino One";
+  font-size: 280%;
+  color: #996633;
+}
+
+/* line 58, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.ingredlist {
+  font-family: arial;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+/* line 64, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.direclist {
+  font-family: arial;
+  font-size: 14px;
+}
+
+/* line 69, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.commenttitle {
+  padding: 10px;
+  font-family: "Mate SC";
+}
+
+/* line 74, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.editlink {
+  padding-left: 14px;
+  font-family: arial;
+  font-size: 80%;
+}
+
+/* line 80, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.favorite-link {
+  font-family: "Courier";
+  font-size: 80%;
+}
+
+/* line 85, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+.function-links {
+  font-family: "Courier";
+  font-size: 80%;
+}
+
+/* line 90, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/recipes.scss */
+section {
+  display: inline-block;
+  width: 30%;
+}
+
+/* line 5, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/comments.scss */
+.commentbody {
+  margin-top: -20px;
+  padding-left: 14px;
+  font-family: "Courier";
+  font-size: 85%;
+}
+
+/* line 12, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/comments.scss */
+.commentago {
+  padding-left: 14px;
+  font-family: arial;
+  font-size: 80%;
+}
+
+/* line 18, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/comments.scss */
+.createcomment {
+  padding-left: 14px;
+  font-family: arial;
+  font-size: 75%;
+}
+
+/* line 4, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/application.scss */
+body {
+  background-image: url("woodblock.jpg");
+  margin: 0em;
+  padding-top: 5px;
+}
+
+/* line 10, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/application.scss */
+.banner-logo {
+  font-family: "Mate SC";
+  font-size: 500%;
+  margin: 0em;
+}
+
+/* line 16, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/application.scss */
+.white-field {
+  background-color: white;
+  width: 100%;
+  margin: 0em;
+  height: 450px;
+  padding: 25px;
+}
+
+/* line 24, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/application.scss */
+nav {
+  font-family: "Courier";
+  background-color: white;
+  width: 600px;
+  padding: 1px;
+  padding-left: 20px;
+  border: 1px solid black;
+  border-radius: 20px;
+  opacity: 0.7;
+  font-size: small;
+}
+
+/* line 36, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/application.scss */
+.nav-link {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* line 41, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/application.scss */
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* line 46, /Users/jamesjacobsmeyer/code/jjcookbook/app/assets/stylesheets/application.scss */
+.top-banner {
+  padding: 10px;
+  background-image: url("woodblocktopbanner2.jpg");
+}
