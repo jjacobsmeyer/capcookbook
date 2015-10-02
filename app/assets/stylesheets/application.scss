@@ -2,7 +2,7 @@
 @import "comments";
 
 body {
-  background-image: url("woodblock.jpg");
+  background-image: url('<%= asset_path("woodblock.jpg") %>');
   margin: 0em;
   padding-top: 5px;
 }
@@ -45,5 +45,5 @@ a {
 
 .top-banner {
   padding: 10px;
-  background-image: url("woodblocktopbanner2.jpg");
+  background-image: url('<%= asset_path("woodblocktopbanner2.jpg") %> ');
 }

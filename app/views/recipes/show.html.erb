@@ -28,7 +28,7 @@
           </ol>
         </div>
       </div>
-    </div>  
+    </div>
 
     <div class="clearfix"></div>
 
@@ -37,18 +37,20 @@
 
   <div class="secondary">
     <p>
-      <span class="function-links"><a href="#">Download Recipe</a> | <a href="#">Add to Grocery List</a></span>
+      <span class="function-links"><a href="#">Download Recipe</a> | <a href="#">Add to Grocery List</a> | <a href="#">Share with a Friend</a></span>
     </p>
     <img src="http://placehold.it/500x350" alt="Image of Dish" />
+    <div class="favorite-link">
+    <%= render partial: "favorites/favorite", locals: { recipe: @recipe } %>
+    </div>
   </div>
 </div>
 
 <div class="clearfix"></div>
-<div class="editfavorites">
+<div class="editlink">
 <% if policy(@recipe).edit? %>
   <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success' %>
 <% end %>
-<%= render partial: "favorites/favorite", locals: { recipe: @recipe } %>
 </div>
 
 <h3 class="commenttitle">Comments<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'></h3>
