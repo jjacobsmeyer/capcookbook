@@ -3,12 +3,10 @@
 
   <div class="primary">
     <h1 class="recipetitle"><%= @recipe.title %></h1>
-    <link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'>
 
     <div class="primary-body">
       <div class="col-1">
         <h4 class="ingredtitle">Ingredients</h4>
-        <link href="http://allfont.net/allfont.css?fonts=linotypezapfino-one" rel="stylesheet" type="text/css" />
         <div class="ingredlist">
           <ul>
             <% @recipe.ingredient.each_line do |line| %>
