@@ -47,23 +47,10 @@ class RecipesController < ApplicationController
     end
   end
 
-
-
-  def vegetables
-  end
-
-  def meat
-  end
-
-  def seafood
-  end
-
-
-
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :body, :category, :ingredient)
+    params.require(:recipe).permit(:title, :body, :category, :ingredient, :foodphoto)
   end
 
 

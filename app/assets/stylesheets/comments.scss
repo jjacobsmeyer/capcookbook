@@ -3,10 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .commentbody {
-  margin-top: -20px;
+  margin-left: 0px;
   padding-left: 14px;
   font-family: "Courier";
   font-size: 85%;
+  margin-bottom: 10px;
 }
 
 .commentago {
@@ -19,4 +20,10 @@
   padding-left: 14px;
   font-family: arial;
   font-size: 75%;
+}
+
+.commenttitle {
+  padding: 10px;
+  font-family: "Mate SC";
+  margin: 0px;
 }

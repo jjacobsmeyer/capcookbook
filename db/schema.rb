@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150929152104) do
+ActiveRecord::Schema.define(version: 20151006152038) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20150929152104) do
     t.datetime "updated_at", null: false
     t.string   "category"
     t.text     "ingredient"
+    t.string   "foodphoto"
   end
 
   create_table "users", force: :cascade do |t|
