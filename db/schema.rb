@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006152038) do
+ActiveRecord::Schema.define(version: 20151014155023) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20151006152038) do
     t.string   "category"
     t.text     "ingredient"
     t.string   "foodphoto"
+    t.string   "recipecard"
   end
 
   create_table "users", force: :cascade do |t|
@@ -64,6 +65,7 @@ ActiveRecord::Schema.define(version: 20151006152038) do
     t.datetime "updated_at",                            null: false
     t.string   "role"
     t.boolean  "email_favorites",        default: true
+    t.string   "recipecard"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
