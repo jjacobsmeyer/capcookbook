@@ -16,6 +16,7 @@ class FavoritesController < ApplicationController
 
   def destroy
     recipe = Recipe.find(params[:recipe_id])
+    @recipe = Recipe.find(params[:recipe_id])
     favorite = Favorite.find(params[:id])
      authorize favorite
     if favorite.destroy
