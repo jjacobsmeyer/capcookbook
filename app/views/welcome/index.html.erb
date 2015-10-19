@@ -1,12 +1,15 @@
 <div class="mom-picture-background">
-  <center><h1 class="welcome-title">Welcome to Mrs. J's online Cookbook!</h1></center>
-  <center><p class="sign-log">
+  <div class="text-container">
+  <h1 class="welcome-title">Welcome to Mrs. J's online Cookbook!</h1>
+  <p class="sign-log">
     <%= link_to "Sign up", new_user_registration_path, class: 'btn btn-primary' %> |
     <%= link_to "Login", new_user_session_path, class: 'btn btn-primary' %>
-  </p></center>
-  <center><p class="sign-up-mission">By signing up you will be able to save your favorite recipes to your profile allowing quick and easy access during your next visit. You will also be able to leave comments on your favorite recipe pages letting other people know what you think or to even share a special memory around that dish of our mother.</p></center>
-  <center><p class="browse-all"><%= link_to "Browse All Recipes", recipes_path %></p></center>
-  <center><p class="disclaimer-notice">*Disclaimer: The photos of the different dishes on this site are not ours, thus they will not look exactly what the recipe will depict.
+  </p>
+  <p class="sign-up-mission">By signing up you will be able to save your favorite recipes to your profile allowing quick and easy access during your next visit. You will also be able to leave comments on your favorite recipe pages letting other people know what you think or to even share a special memory around that dish of our mother.</p>
+  <p class="browse-all"><%= link_to "Browse All Recipes", recipes_path %></p>
+  <p class="disclaimer-notice">*Disclaimer: The photos of the different dishes on this site are not ours, thus they will not look exactly what the recipe will depict.
   Our goal is to work our way through the site cooking the different dishes and photographing them as we go replacing the current photos
-  with new photos of the finished products as the recipe depicts. We encourage you to do the same, if you get a good shot, email it to us!</p></center>
+  with new photos of the finished products as the recipe depicts. We encourage you to do the same, if you get a good shot, email it to us!</p>
+  </div>
+
 </div>
