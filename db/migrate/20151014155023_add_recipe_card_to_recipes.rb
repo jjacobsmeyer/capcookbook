@@ -1,5 +1,5 @@
 class AddRecipeCardToRecipes < ActiveRecord::Migration
   def change
-    add_column :recipes, :recipecard, :string
+    add_column :recipes, :recipe_card, :string
   end
 end

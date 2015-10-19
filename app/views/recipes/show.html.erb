@@ -30,14 +30,14 @@
 
     <div class="clearfix"></div>
 
-    <p class="view-recipe-card">View Mrs. J's recipe Card: <%= image_tag(@recipe.recipecard.thumb.url) %> <img src="http://placehold.it/70x50" alt="card"></p>
+    <p class="view-recipe-card">View Mrs. J's recipe Card: <%= image_tag(@recipe.recipe_card.thumb.url) %> <img src="http://placehold.it/70x50" alt="card"></p>
   </div>
 
   <div class="secondary">
     <p>
       <span class="function-links"><a href="#">Download Recipe</a> | <a href="#">Add to Grocery List</a> | <a href="#">Share with a Friend</a></span>
     </p>
-    <%= image_tag(@recipe.foodphoto.regular.url) %>
+    <%= image_tag(@recipe.food_photo.regular.url) %>
     <%# <img src="http://placehold.it/500x350" alt="Image of Dish" /> %>
     <div class="favorite-comment-link">
     <a href="#">View or Leave a Comment Below</a>

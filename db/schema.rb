@@ -37,12 +37,12 @@ ActiveRecord::Schema.define(version: 20151014155023) do
   create_table "recipes", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "category"
     t.text     "ingredient"
-    t.string   "foodphoto"
-    t.string   "recipecard"
+    t.string   "food_photo"
+    t.string   "recipe_card"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,7 +65,6 @@ ActiveRecord::Schema.define(version: 20151014155023) do
     t.datetime "updated_at",                            null: false
     t.string   "role"
     t.boolean  "email_favorites",        default: true
-    t.string   "recipecard"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
