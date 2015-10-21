@@ -4,4 +4,8 @@ class FavoritePolicy < ApplicationPolicy
     true
   end
 
+  def create?
+    user.present?
+  end
+  
 end

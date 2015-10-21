@@ -35,7 +35,7 @@
 
   <div class="secondary">
     <p>
-      <span class="function-links"><a href="#">Download Recipe</a> | <a href="#">Add to Grocery List</a> | <a href="#">Share with a Friend</a></span>
+      <span class="function-links"><a href="#">Download Recipe</a> | <%= link_to "Add to Grocery List", recipe_groceries_path(@recipe) %> | <a href="#">Share with a Friend</a></span>
     </p>
     <%= image_tag(@recipe.food_photo.regular.url) %>
     <%# <img src="http://placehold.it/500x350" alt="Image of Dish" /> %>

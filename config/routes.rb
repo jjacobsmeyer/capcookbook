@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :comments, only: [:create, :show, :index, :new, :destroy]
     resources :favorites, only: [:create, :destroy]
+    resources :groceries, only: [:create, :destory, :show, :index]
   end
 
   get 'drinks' => 'recipes#index', :category => "drinks"
