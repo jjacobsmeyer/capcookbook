@@ -40,7 +40,7 @@
     <%= image_tag(@recipe.food_photo.regular.url) %>
     <%# <img src="http://placehold.it/500x350" alt="Image of Dish" /> %>
     <div class="favorite-comment-link">
-    <a href="#">View or Leave a Comment Below</a>
+    <a id="open-comment-link" href="show_comment_form">View or Leave a Comment Below</a>
     <%= render partial: "favorites/favorite", locals: { recipe: @recipe } %>
     </div>
   </div>
@@ -53,8 +53,10 @@
 <% end %>
 </div>
 
-<h3 class="commenttitle">Comments<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'></h3>
-<%= render partial: "comments/comment", collection: @comments %>
-<% if policy(Comment.new).create? %>
-  <%= render partial: "comments/form", locals: { recipe: @recipe, comment: @comment } %>
-<% end %>
+<div id="comment-box">
+  <h3 class="commenttitle">Comments<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'></h3>
+  <%= render partial: "comments/comment", collection: @comments %>
+  <% if policy(Comment.new).create? %>
+    <%= render partial: "comments/form", locals: { recipe: @recipe, comment: @comment } %>
+  <% end %>
+</div>

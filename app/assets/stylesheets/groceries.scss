@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.row input:checked + span {text-decoration: line-through}
+.row-1 input:checked + span {text-decoration: line-through}
 
 .grocery_list_title {
   font-family: "Handlee";
@@ -10,7 +10,7 @@
   font-size: 270%;
 }
 
-.row {
+.row-1 {
   font-family: "Handlee";
   font-weight: 400;
   font-size: 120%;
