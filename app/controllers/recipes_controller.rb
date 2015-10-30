@@ -11,14 +11,17 @@ class RecipesController < ApplicationController
      @recipe = Recipe.find(params[:id])
      @comments = @recipe.comments
      @comment = Comment.new
+     @recipe_attachments = @recipe.recipe_attachments.all
   end
 
   def new
     @recipe = Recipe.new
+    @recipe_attachment = @recipe.recipe_attachments.build
   end
 
   def edit
     @recipe = Recipe.find(params[:id])
+    @recipe_attachment = @recipe.recipe_attachments.build
     authorize @recipe
   end
 
@@ -26,6 +29,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
     if @recipe.update_attributes(recipe_params)
+      @recipe.upload_images(params[:recipe_attachments][:images])
       flash[:notice] = "Recipe was updated."
       redirect_to @recipe
     else
@@ -39,6 +43,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     authorize @recipe
     if @recipe.save
+      @recipe.upload_images(params[:recipe_attachments][:images])
       flash[:notice] = "Recipe was saved."
       redirect_to @recipe
     else
@@ -50,8 +55,6 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    params.require(:recipe).permit(:title, :body, :category, :ingredient, :food_photo, :recipe_card)
+    params.require(:recipe).permit(:title, :body, :category, :ingredient, :food_photo, recipe_attachments_attributes: [:images])
   end
-
-
 end

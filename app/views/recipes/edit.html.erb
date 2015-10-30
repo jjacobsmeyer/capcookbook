@@ -19,15 +19,15 @@
       <%= f.label :ingredient %>
       <%= f.text_area :ingredient, rows: 8, class: 'form-control', placeholder: "Enter recipe ingredients" %>
     </div>
+  </div>
     <div class="form-group">
       <%= f.label :food_photo %>
       <%= f.file_field :food_photo %>
       <%= f.hidden_field :food_photo_cache %>
     </div>
     <div class="form-group">
-      <%= f.label :recipe_card %>
-      <%= f.file_field :recipe_card %>
-      <%= f.hidden_field :recipe_card_cache %>
+      <%= f.label :recipe_attachments %><br>
+      <%= f.file_field :recipe_attachments, :multiple => true, name: "recipe_attachments[images][]" %>
     </div>
     <div class="form-group">
       <%= f.submit "Save", class: 'btn btn-success' %>
