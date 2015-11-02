@@ -32,7 +32,7 @@
 
     <p class="view-recipe-card"> View Mrs. J's recipe Card:
       <% @recipe.recipe_attachments.each do |attachment| %>
-        <%= image_tag(attachment.image.thumb.url)%>
+        <%= link_to(image_tag(attachment.image.thumb.url), attachment.image.url, data: { lightbox: "recipe-cards" })%>
       <% end %>
     </p>
   </div>

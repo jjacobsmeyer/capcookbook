@@ -5,4 +5,5 @@ $( document ).ready(function() {
     e.preventDefault();
     $('#comment-box').slideToggle();
   });
+
 });
