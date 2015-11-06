@@ -1,0 +1,16 @@
+<h1><%= @recipe.title %></h1>
+<ul>
+  <% @recipe.ingredient.each_line do |line| %>
+    <li><%= line %></li>
+  <% end %>
+</ul>
+<ol>
+  <% @recipe.body.each_line do |line| %>
+    <li><%= line %></li>
+  <% end %>
+</ol>
+
+
+<% @recipe.recipe_attachments.each do |attachment| %>
+  <%= image_tag(attachment.image.pdfed.url) %>
+<% end %>

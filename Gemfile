@@ -11,6 +11,7 @@ end
 
 group :development do
   gem 'sqlite3'
+  gem 'pry-rails'
 end
 
 gem 'carrierwave'
@@ -59,3 +60,5 @@ end
 
 gem 'devise'
 gem 'pundit'
+gem 'wkhtmltopdf-binary-edge'
+gem 'wicked_pdf'

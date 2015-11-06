@@ -8,10 +8,18 @@ class RecipesController < ApplicationController
   end
 
   def show
-     @recipe = Recipe.find(params[:id])
-     @comments = @recipe.comments
-     @comment = Comment.new
-     @recipe_attachments = @recipe.recipe_attachments.all
+    @recipe = Recipe.find(params[:id])
+    @comments = @recipe.comments
+    @comment = Comment.new
+    @recipe_attachments = @recipe.recipe_attachments.all
+
+    respond_to do |format|
+     format.html
+      format.pdf do
+       render pdf: @recipe.title   # Excluding ".pdf" extension.
+     end
+    end
+
   end
 
   def new
