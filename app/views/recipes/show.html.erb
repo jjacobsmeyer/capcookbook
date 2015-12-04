@@ -1,5 +1,4 @@
-
-<div class="container">
+<div id="wrapper">
 
   <div class="primary">
     <h1 class="recipetitle"><%= @recipe.title %></h1>
@@ -38,29 +37,33 @@
   </div>
 
   <div class="secondary">
-    <p>
-      <span class="function-links"><a href="#">Download Recipe</a> | <%= link_to "Add to Grocery List", recipe_groceries_path(@recipe) %> | <a href="#">Share with a Friend</a></span>
-    </p>
+    <div class="function-links">
+      <a href="#">Download Recipe</a> | <%= link_to "Add to Grocery List", recipe_groceries_path(@recipe) %> | <a href="#">Share with a Friend</a>
+    </div>
+    
     <%= image_tag(@recipe.food_photo.regular.url) %>
     <%# <img src="http://placehold.it/500x350" alt="Image of Dish" /> %>
+
     <div class="favorite-comment-link">
-    <a id="open-comment-link" href="show_comment_form">View or Leave a Comment Below</a>
-    <%= render partial: "favorites/favorite", locals: { recipe: @recipe } %>
+        <a id="open-comment-link" href="show_comment_form">View or Leave a Comment Below</a>
+        <%= render partial: "favorites/favorite", locals: { recipe: @recipe } %>
     </div>
   </div>
-</div>
 
-<div class="clearfix"></div>
-<div class="editlink">
-<% if policy(@recipe).edit? %>
-  <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success' %>
-<% end %>
-</div>
+  <div class="clearfix"></div>
 
-<div id="comment-box">
-  <h3 class="commenttitle">Comments<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'></h3>
-  <%= render partial: "comments/comment", collection: @comments %>
-  <% if policy(Comment.new).create? %>
-    <%= render partial: "comments/form", locals: { recipe: @recipe, comment: @comment } %>
+  <div class="editlink">
+  <% if policy(@recipe).edit? %>
+    <%= link_to "Edit", edit_recipe_path(@recipe), class: 'btn btn-success' %>
   <% end %>
+  </div>
+
+  <div id="comment-box">
+    <h3 class="commenttitle">Comments<link href='https://fonts.googleapis.com/css?family=Mate+SC' rel='stylesheet' type='text/css'></h3>
+    <%= render partial: "comments/comment", collection: @comments %>
+    <% if policy(Comment.new).create? %>
+      <%= render partial: "comments/form", locals: { recipe: @recipe, comment: @comment } %>
+    <% end %>
+  </div>
+
 </div>

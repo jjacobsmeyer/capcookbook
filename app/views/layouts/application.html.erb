@@ -15,45 +15,47 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="top-banner">
-   <h1 class="banner-logo"> <%= link_to "Mrs. J's Cookbook", root_path %></h1>
-   <nav>
-    <%= link_to "ENTRÉES", entrees_path, class: "nav-link" %> |
-    <%= link_to "SIDES", sides_path, class: "nav-link" %> |
-    <%= link_to "APPETIZERS", appetizers_path, class: "nav-link" %> |
-    <%= link_to "DESSERTS", desserts_path, class: "nav-link" %> |
-    <%= link_to "DRINKS", drinks_path, class: "nav-link" %> |
-    <%= link_to "ABOUT", about_path, class: "nav-link" %>
-  </nav>
+  <header>
+    <div>
+     <h1 class="banner-logo"> <%= link_to "Mrs. J's Cookbook", root_path %></h1>
+       <nav>
+        <%= link_to "ENTRÉES", entrees_path, class: "nav-link" %> |
+        <%= link_to "SIDES", sides_path, class: "nav-link" %> |
+        <%= link_to "APPETIZERS", appetizers_path, class: "nav-link" %> |
+        <%= link_to "DESSERTS", desserts_path, class: "nav-link" %> |
+        <%= link_to "DRINKS", drinks_path, class: "nav-link" %> |
+        <%= link_to "ABOUT", about_path, class: "nav-link" %>
+      </nav>
+    </div>
 
-        <% if current_user %>
-          Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %> | <%= link_to "Profile", user_path(current_user)%>
-        <% else %>
-          <%= link_to "Sign In", new_user_session_path %> or
-          <%= link_to "Sign Up", new_user_registration_path %>
+    <div id="login">
+      <% if current_user %>
+        Hello <%= current_user.email %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %> | <%= link_to "Profile", user_path(current_user)%>
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %> or
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+
+      <% if flash[:notice] %>
+        <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:error] %>
+        <div class="alert alert-danger">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <%= flash[:error] %>
+        </div>
+        <% elsif flash[:alert] %>
+          <div class="alert alert-warning">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <%= flash[:alert] %>
+          </div>
         <% end %>
+    </div>
+  </header>
 
-        <% if flash[:notice] %>
-          <div class="alert alert-success">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <%= flash[:notice] %>
-          </div>
-        <% elsif flash[:error] %>
-          <div class="alert alert-danger">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <%= flash[:error] %>
-          </div>
-          <% elsif flash[:alert] %>
-            <div class="alert alert-warning">
-              <button type="button" class="close" data-dismiss="alert">&times;</button>
-              <%= flash[:alert] %>
-            </div>
-          <% end %>
-
-  </div>
-<div class="white-field">
   <%= yield %>
-</div>
-<footer class="bottom-banner"></footer>
+
 </body>
 </html>

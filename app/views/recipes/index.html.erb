@@ -1,12 +1,16 @@
-<h1>Recipes#index</h1>
+<div id="wrapper">
+  <h1>Recipes#index</h1>
 
-<% if policy(Recipe.new).create? %>
-  <%= link_to "New Recipe", new_recipe_path, class: 'btn btn-success' %>
-<% end %>
+  <% if policy(Recipe.new).create? %>
+    <%= link_to "New Recipe", new_recipe_path, class: 'btn btn-success' %>
+  <% end %>
 
-<% @recipes.each do |recipe| %>
-  <div><%= link_to recipe.title, recipe %></div>
-  <small><%= recipe.category %></small>
-  <br>
-  <br>
-<% end %>
+  <div id="flex-recipe">
+    <% @recipes.each do |recipe| %>
+      <div class="recipe">
+        <h1><%= link_to recipe.title, recipe %></h1>
+        <p><%= recipe.category %></p>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,10 +1,31 @@
 // Place all the styles related to the Recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.container {
-  width: 100%;
+#wrapper {
+	background: white;
+	padding: 2.5% 1em;
+	width: 100%;
 }
 
+#flex-recipe {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+	.recipe {
+		flex-basis: 25%;
+		margin-bottom: 1em;
+		font-size: 1.5em;
+	}
+		.recipe h1 {
+			font-size: 1em;
+			margin-bottom: .25em;
+		}
+		.recipe p {
+			text-transform: capitalize;
+			margin: 0;
+		}
 h4 {
   margin: 0em;
 }
@@ -13,26 +34,19 @@ h4 {
   clear: both;
 }
 
-.primary-body {
-  // -webkit-column-count: 2; /* Chrome, Safari, Opera */
-  // -moz-column-count: 2; /* Firefox */
-  // column-count: 2;
-  // -webkit-column-rule-style: solid; /* Chrome, Safari, Opera */
-  // -moz-column-rule-style: solid; /* Firefox */
-  // column-rule-style: solid;
-  // -webkit-column-width: 50%; /* Chrome, Safari, Opera */
-  // column-width: 50%;
-  // -webkit-column-rule-width: 1px; /* Chrome, Safari, Opera */
-  // -moz-column-rule-width: 1px; /* Firefox */
-  // column-rule-width: 1px;
-  // -webkit-column-rule-color: gray; /* Chrome, Safari, Opera */
-  // -moz-column-rule-color: gray; /* Firefox */
-  // column-rule-color: gray;
+h1 {
+	margin: 0 0 1em 0;
+	padding: 0;
 }
 
 .primary, .secondary, .col-1, .col-2 {
   width: 50%;
   float: left;
+}
+
+.secondary img {
+	width: 100%;
+	margin: 0;
 }
 
 .recipetitle {
@@ -83,11 +97,17 @@ h4 {
 .favorite-comment-link {
   font-family: "Courier";
   font-size: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin-top: .5em;
 }
 
 .function-links {
   font-family: "Courier";
   font-size: 80%;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 1em;
 }
 
 section {

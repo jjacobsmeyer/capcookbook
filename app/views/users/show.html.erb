@@ -1,4 +1,6 @@
-<h2 class="fav-title">Favorite Recipes</h2>
-<% @recipes.each do |recipe| %>
-  <p class="rec-title"><%= link_to recipe.title, recipe %></p>
-<% end %>
+<div id="wrapper">
+  <h2 class="fav-title">Favorite Recipes</h2>
+  <% @recipes.each do |recipe| %>
+    <p class="rec-title"><%= link_to recipe.title, recipe %></p>
+  <% end %>
+</div>
