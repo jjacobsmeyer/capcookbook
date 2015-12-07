@@ -1,7 +1,8 @@
 class RecipesController < ApplicationController
   def index
-    if params[:category].present?
-      @recipes = Recipe.where(category: params[:category])
+    @category = params[:category]
+    if @category.present?
+      @recipes = Recipe.where(category: @category)
     else
       @recipes = Recipe.all
     end
@@ -37,7 +38,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     authorize @recipe
     if @recipe.update_attributes(recipe_params)
-      @recipe.upload_images(params[:recipe_attachments][:images])
+      @recipe.upload_images(params[:recipe_attachments][:images]) if params[:recipe_attachments]
       flash[:notice] = "Recipe was updated."
       redirect_to @recipe
     else
@@ -51,7 +52,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     authorize @recipe
     if @recipe.save
-      @recipe.upload_images(params[:recipe_attachments][:images])
+      @recipe.upload_images(params[:recipe_attachments][:images]) if params[:recipe_attachments]
       flash[:notice] = "Recipe was saved."
       redirect_to @recipe
     else

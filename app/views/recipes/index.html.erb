@@ -1,5 +1,5 @@
 <div id="wrapper">
-  <h1>Recipes#index</h1>
+  <h1><%= @category ? @category.capitalize : "All Recipes" %></h1>
 
   <% if policy(Recipe.new).create? %>
     <%= link_to "New Recipe", new_recipe_path, class: 'btn btn-success' %>
